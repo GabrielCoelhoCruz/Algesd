@@ -1,0 +1,46 @@
+import javax.swing.JOptionPane;
+
+public class ExSelectSort {
+
+	public static void main(String[] args) {
+
+			int vetor[] = new int[5];
+			String vet = "";
+			
+			for(int i = 0 ; i < vetor.length ; i++) {
+				vetor[i] = Integer.parseInt(JOptionPane.showInputDialog("Insira Um Numero"));
+				vet = vet + "/" + vetor[i];
+			}
+			
+			System.out.println(vet);
+			
+			ordenar(vetor);
+			vet = "";
+			
+			for(int i = 0 ; i < vetor.length ; i++) {
+				vet = vet + "/" + vetor[i];
+			}
+			System.out.println(vet);
+
+		}
+		public static void ordenar(int iVet[]) {
+			
+			int iA, iB, iC; 
+			int iT;
+			
+			for(iA = 0 ; iA< iVet.length ; iA++) {
+				iC=iA;
+				iT=iVet[iA];
+				for(iB=iA+1; iB < iVet.length; iB++) {
+					if(iVet[iB] < iT) {
+						iC=iB;
+						iT=iVet[iB];
+					}
+				}
+				iVet[iC]=iVet[iA];
+				iVet[iA]=iT;
+			}
+			
+		}
+
+	}
